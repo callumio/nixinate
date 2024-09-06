@@ -98,6 +98,7 @@
           };
         };
       packages = forAllSystems (system: pkgs: nixpkgsFor.${system}.generateApps);
+      nixinate = packages;
       checks = forAllSystems (system: pkgs:
         let
           vmTests = import ./tests {
