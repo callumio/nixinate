@@ -97,7 +97,7 @@
                );
           };
         };
-      nixinate = forAllSystems (system: pkgs: nixpkgsFor.${system}.generateApps);
+      packages = forAllSystems (system: pkgs: nixpkgsFor.${system}.generateApps);
       checks = forAllSystems (system: pkgs:
         let
           vmTests = import ./tests {
