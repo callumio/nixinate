@@ -69,8 +69,7 @@
               '');
             in final.writeShellScript "deploy-${machine}.sh" script;
           in
-          {
-             nixinate =
+             
                (
                  nixpkgs.lib.genAttrs
                    validMachines
@@ -95,7 +94,6 @@
                         }
                       )
                );
-          };
         };
       packages = forAllSystems (system: pkgs: nixpkgsFor.${system}.generateApps);
       nixinate = packages;
